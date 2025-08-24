@@ -30,8 +30,8 @@ jobs:
         buildozer android debug
         ls bin/
 
-    - name: Upload APK artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: APK
-        path: bin/*.apk
+   - name: Upload APK artifact
+  uses: actions/upload-artifact@v4
+  with:
+    name: APK
+    path: bin/*.apk
