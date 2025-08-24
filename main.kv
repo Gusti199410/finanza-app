@@ -1,0 +1,47 @@
+BoxLayout:
+    orientation: "vertical"
+
+    MDTopAppBar:
+        title: "Finanzas Personales"
+        elevation: 10
+
+    ScrollView:
+        MDGridLayout:
+            cols: 1
+            adaptive_height: True
+            padding: dp(10)
+            spacing: dp(10)
+
+            MDTextField:
+                id: fecha
+                hint_text: "Fecha (YYYY-MM-DD)"
+                helper_text_mode: "on_focus"
+
+            MDTextField:
+                id: categoria
+                hint_text: "Categoría (Comida, Transporte, etc.)"
+                helper_text_mode: "on_focus"
+
+            MDTextField:
+                id: tipo
+                hint_text: "Tipo (Gasto/Ingreso)"
+                helper_text_mode: "on_focus"
+
+            MDTextField:
+                id: monto
+                hint_text: "Monto"
+                helper_text_mode: "on_focus"
+                input_filter: "float"
+
+            MDRaisedButton:
+                text: "Agregar registro"
+                on_release: app.agregar_registro()
+
+            MDRaisedButton:
+                text: "Mostrar gráfico"
+                on_release: app.mostrar_grafico()
+
+            BoxLayout:
+                id: grafico_box
+                size_hint_y: None
+                height: dp(300)
